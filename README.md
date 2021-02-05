@@ -19,7 +19,7 @@
 
 This is the base image to run Apache Hadoop Ozone in docker containers. This is for test/develop and not for production.
 
-It doesn't include any Ozone specific jar files or release artifacts just any empty environment which includes all the specific tools to run Apache Hadoop Ozone inside containers.
+The container doesn't include any Ozone specific jar files or release artifacts just an empty environment which includes all the specific tools to run Apache Ozone inside containers.
 
 To build it, please use:
 
