@@ -26,10 +26,10 @@ jobs:
       - name: login with docker 
         run: echo ${{ secrets.GHCR_CONTAINER_PUSH }} | docker login -u ${{ github.repository_owner }} --password-stdin ghcr.io
       - name: test
+        if:  ${{ github.event_name == 'create' && github.event.ref_type == 'tag' }}
         run: |
             echo $GITHUB_EVENT_NAME
-            cat $GITHUB_EVENT_PATH
-            echo $GITHUB_REF
+            echo ${GITHUB_REF##*/}
 #      - name: build image
 #        run: docker build -t ghcr.io/$(echo $GITHUB_REPOSITORY | sed 's/docker-//g') .
 #      - name: push image
